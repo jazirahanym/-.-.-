@@ -50,9 +50,9 @@ def chaptercount(s,filename):
         line = line.lower()
         for a in s: 
               #Вот регулярное выражнение, которое ищет глагол
-              match = re.search( a, line) 
+              match = re.findall( r'\b%s\b' %(a), line)
               if match:
-                  c = c + 1 
+                  с += len(match) 
               
     f.close() 
     return c
